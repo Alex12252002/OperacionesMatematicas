@@ -1,0 +1,42 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tarea2.Vista.HomePage">
+
+    <StackLayout Padding="20">
+        <!-- Título -->
+        <StackLayout HorizontalOptions="CenterAndExpand">
+            <Label Text="Operaciones Matemáticas" TextColor="Black" HorizontalOptions="Center" FontSize="Large" />
+        </StackLayout>
+
+        <!-- Entradas y controles de selección -->
+        <Label Text="Número 1" />
+        <Entry x:Name="EntryNumero1" Keyboard="Numeric" />
+
+        <Label Text="Número 2" />
+        <Entry x:Name="EntryNumero2" Keyboard="Numeric" />
+
+        <Label Text="Operación" />
+        <Picker x:Name="PickerOperacion">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Suma</x:String>
+                    <x:String>Resta</x:String>
+                    <x:String>Multiplicación</x:String>
+                    <x:String>División</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <!-- Botón de cálculo -->
+        <Button Text="Calcular" Clicked="BtnCalcular_Clicked" />
+        <Label Text="Listado de Operaciones" TextColor="Green"  HorizontalOptions="Center" FontSize="Large"></Label>
+
+        <!-- Lista de operaciones -->
+        <ScrollView>
+            <StackLayout x:Name="listaOperaciones">
+                <!-- Aquí se agregarán dinámicamente las operaciones -->
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+
+</ContentPage>
